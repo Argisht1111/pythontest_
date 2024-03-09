@@ -74,5 +74,6 @@
 # a = stadion()
 # a.input_()
 # a.output_()
+print('gela')
 
 
