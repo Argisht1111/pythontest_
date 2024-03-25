@@ -12,7 +12,6 @@
 # tkinter.mainloop()
 
 import telebot
-import webbrowser
 from telebot import types
 
 bot = telebot.TeleBot('7007592847:AAGEFkjxNB14OJHlnAuIhT-xlxj3dxrg-8U')
@@ -36,15 +35,17 @@ def test(message):
 @bot.message_handler(commands=['start',])
 def test(message):
     bot.send_message(message.chat.id,'<em>ВАЗ2107</em>', parse_mode='html')
-@bot.message_handler(commands=['hello','gela'])
+@bot.message_handler(commands=['hello'])
 
 
 def test(message):
     bot.send_message(message.chat.id,f'привет {message.from_user.first_name} {message.from_user.last_name}')
 @bot.message_handler()
 def info(message):
-    if message.text.lower() == 'ты хуй':
-        bot.reply_to(message, f'слышишь ты я тебе щяс ебалник разобью')
+    if message.text.lower() == 'как дела':
+        bot.reply_to(message, f'нормально уцы у тебя как')
+    elif message.text.lower() == 'привет':
+        bot.send_message(message.chat.id, f'привет  {message.from_user.first_name}')
 
 
 
